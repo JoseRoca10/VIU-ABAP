@@ -13,7 +13,23 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install abaplint
+        run: npm install -g @abaplint/cli
+
+      - name: Run abaplint and generate report
+        run: abaplint --format json > abaplint-report.json
+
+      - name: Install SonarScanner
+        run: npm install -g sonarqube-scanner
+        
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
