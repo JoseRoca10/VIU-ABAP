@@ -12,7 +12,8 @@ DATA: it_fieldcat  TYPE slis_t_fieldcat_alv,
 START-OF-SELECTION.
 
 *Fetch data from the database
-  SELECT * FROM sbook INTO TABLE it_sbook.
+  SELECT * FROM sbook INTO TABLE it_sbook. 
+SELECT * FROM sbook INTO TABLE it_sbook. 
 
 *Build field catalog
   wa_fieldcat-fieldname  = 'CARRID'.    " Fieldname in the data table
