@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "files": ["src"],
+  "rules": {
+    "check_syntax": true,
+    "empty_line_after_method": true
+  }
+}
